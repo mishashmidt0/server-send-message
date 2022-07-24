@@ -28,16 +28,16 @@ const transporter = nodemailer.createTransport({
 
 
 app.post('/sendMessage', async (req, res) => {
-    const {message, contacts, name} = req.body;
+    const {message, email, name} = req.body;
 
     await transporter.sendMail({
         from: '"Портфолио 👻" <foo@example.com>',
         to: `${smtp_login}`,
         subject: "gmail",
         html: `<b>Сообщения с вашего портфолио</b>
-                <div>name: ${name}</div>
-                <div>name: ${message}</div>
-                <div>name: ${contacts}</div>`,
+                <h2> ${name}</h2>
+                <h3> ${email}</h3>
+                <p>${message}</p>`,
     });
     res.send("ok")
 })
