@@ -42,7 +42,7 @@ app.post('/sendMessage', async (req, res) => {
     res.send("ok")
 })
 
-app.get('/', (req, res) => {
+app.get('/', () => {
 })
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
