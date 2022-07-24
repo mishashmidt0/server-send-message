@@ -28,9 +28,9 @@ const transporter = nodemailer.createTransport({
 
 
 app.post('/sendMessage', async (req, res) => {
-   const {message,contacts, name} =req.body;
+    const {message, contacts, name} = req.body;
 
-     await transporter.sendMail({
+    await transporter.sendMail({
         from: '"Портфолио 👻" <foo@example.com>',
         to: smtp_login,
         subject: "gmail",
@@ -42,7 +42,8 @@ app.post('/sendMessage', async (req, res) => {
     res.send("ok")
 })
 
-app.get('/', () => {
+app.get('/', (req, res) => {
+    res.send('Hello!')
 })
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
