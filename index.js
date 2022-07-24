@@ -32,7 +32,7 @@ app.post('/sendMessage', async (req, res) => {
 
     await transporter.sendMail({
         from: '"Портфолио 👻" <foo@example.com>',
-        to: smtp_login,
+        to: `${smtp_login}`,
         subject: "gmail",
         html: `<b>Сообщения с вашего портфолио</b>
                 <div>name: ${name}</div>
